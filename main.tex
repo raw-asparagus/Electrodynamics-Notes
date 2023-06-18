@@ -1,0 +1,88 @@
+\documentclass[a4paper]{article}
+
+\usepackage[in]{fullpage}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\allowdisplaybreaks
+
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{multicol}
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\paren}{\lparen}{\rparen}
+\DeclarePairedDelimiter{\sparen}{\lbrack}{\rbrack}
+\makeatletter
+    \let\oldabs\abs
+    \def \abs {\@ifstar{\oldabs}{\oldabs*}}
+    \let\oldparen\paren
+    \def \paren {\@ifstar{\oldparen}{\oldparen*}}
+\makeatother
+
+\usepackage{scrextend}
+\newenvironment{indented}
+    {
+        \begin{addmargin}[15pt]{0pt}
+    }
+    {
+        \end{addmargin}
+    }
+\newenvironment{eqnindent}
+{
+    \begin{indented}
+        \vspace{- \bigskipamount}
+        \vspace{- \smallskipamount}
+}
+{
+    \end{indented}
+    \vspace{- \smallskipamount}
+}
+
+\usepackage{enumitem}
+\newenvironment{dasheditemize}
+{
+    \begin{itemize}[noitemsep, nolistsep]
+        \renewcommand\labelitemi{--}
+        \renewcommand\labelitemii{--}
+        \renewcommand\labelitemiii{--}
+        \renewcommand\labelitemiv{--}
+}
+{
+    \end{itemize}
+}
+\newenvironment{hookeditemize}
+{
+    \begin{itemize}[noitemsep, nolistsep]
+        \renewcommand\labelitemi{$\hookrightarrow$}
+        \renewcommand\labelitemii{$\hookrightarrow$}
+        \renewcommand\labelitemiii{$\hookrightarrow$}
+        \renewcommand\labelitemiv{$\hookrightarrow$}
+}
+{
+    \end{itemize}
+}
+\newenvironment{tightenumerate}
+{
+    \begin{enumerate}[noitemsep, nolistsep]
+}
+{
+    \end{enumerate}
+}
+
+\newcommand{\blankline}{~\newline\vspace{\smallskipamount}\newline}
+
+\setlength{\parindent}{0pt}
+
+\usepackage{subfiles}
+
+\begin{document}
+
+    \section{Vector Analysis}
+    \subsection{Vector Algebra}
+    \subfile{./chap_1/chap_1_1_1.tex}
+    \subfile{./chap_1/chap_1_1_2.tex}
+    \subfile{./chap_1/chap_1_1_3.tex}
+
+\end{document}

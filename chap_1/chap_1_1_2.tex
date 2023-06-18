@@ -1,0 +1,85 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+    \subsubsection{Vector Algebra: Component Form}
+    Consider a 3-D coordinate system in Cartesian coordinates. \\
+    Let $\hat{\bm{x}}$, $\hat{\bm{y}}$ \& $\hat{\bm{z}}$ be unit vectors parallel to the $x$, $y$ and $z$ axes respectively \texttt{(Figure 1.2-1)}. \\
+    A vector $\bm{A}$ \texttt{(Figure 1.2-2)} can be expanded in terms of the aforementioned basis vectors as - 
+    \begin{eqnindent}
+        \begin{flalign}
+            \bm{A} = A_x\hat{\bm{x}} + A_y\hat{\bm{y}} + A_z\hat{\bm{z}} &&
+        \end{flalign}
+    \end{eqnindent}
+    where $A_x$, $A_y$ \& $A_z$ are the components of $\bm{A}$ or geometrically as projections of $\bm{A}$ along the three coordinate axes - 
+    \begin{itemize}
+        \renewcommand\labelitemi{--}
+        \item $A_x = \bm{A} \cdot \hat{\bm{x}}$
+        \item $A_y = \bm{A} \cdot \hat{\bm{y}}$
+        \item $A_z = \bm{A} \cdot \hat{\bm{z}}$
+    \end{itemize}
+    This allows for the 4 vector operations to be expressed in terms of its components - 
+    \begin{enumerate}
+        \item Vector addition - add like components
+        \begin{eqnindent}
+            \begin{flalign}
+                \bm{A} + \bm{B} &= \paren{A_x\hat{\bm{x}} + A_y\hat{\bm{y}} + A_z\hat{\bm{z}}} + \paren{B_x\hat{\bm{x}} + B_y\hat{\bm{y}} + B_z\hat{\bm{z}}} &&\nonumber\\
+                &= \paren{A_x + B_x}\hat{\bm{x}} + \paren{A_y + B_y}\hat{\bm{y}} + \paren{A_z + B_z}\hat{\bm{z}} &&
+            \end{flalign}
+        \end{eqnindent}
+        \item Multiplication by a scalar - multiply each component
+        \begin{eqnindent}
+            \begin{flalign}
+                a\bm{A} = \paren{aA_x}\hat{\bm{x}} + \paren{aA_y}\hat{\bm{y}} + \paren{aA_z}\hat{\bm{z}} &&
+            \end{flalign}
+        \end{eqnindent}
+        \item Dot product of two vectors - multiply like components, then add\\
+        Since $\hat{\bm{x}}$, $\hat{\bm{y}}$, $\hat{\bm{z}}$ are mutually perpendicular - 
+        \begin{eqnindent}
+            \begin{flalign}
+                \begin{rcases}
+                    \hat{\bm{x}} \cdot \hat{\bm{x}} = \hat{\bm{y}} \cdot \hat{\bm{y}} = \hat{\bm{z}} \cdot \hat{\bm{z}} &= 1\quad\\
+                    \hat{\bm{x}} \cdot \hat{\bm{y}} = \hat{\bm{x}} \cdot \hat{\bm{z}} = \hat{\bm{y}} \cdot \hat{\bm{z}} &= 0\quad
+                \end{rcases} &&
+            \end{flalign}
+        \end{eqnindent}
+        \begin{eqnindent}
+            \begin{flalign}
+                \Rightarrow \bm{A} \cdot \bm{B} &= \paren{A_x\hat{\bm{x}} + A_y\hat{\bm{y}} + A_z\hat{\bm{z}}} \cdot \paren{B_x\hat{\bm{x}} + B_y\hat{\bm{y}} + B_z\hat{\bm{z}}} &&\nonumber\\
+                &= A_xB_x + A_yB_y + A_zB_z &&
+            \end{flalign}
+        \end{eqnindent}
+        \begin{indented}
+            i.e. For the case of $\bm{A} \cdot \bm{A} = A_x^2 + A_y^2 + A_z^2$
+            \begin{eqnindent}
+                \begin{flalign}
+                    \abs{\bm{A}} = A = \sqrt{A_x^2 + A_y^2 + A_z^2} &&
+                \end{flalign}
+            \end{eqnindent}
+        \end{indented}
+        \item Cross product of two vectors - form the determinant whose first row are the unit vectors parallel to the coordinate axes, whose second row are the components of $\bm{A}$, and whose third row are the components of $\bm{B}$\\
+        Since $\hat{\bm{x}}$, $\hat{\bm{y}}$, $\hat{\bm{z}}$ are mutually perpendicular - 
+        \begin{eqnindent}
+            \begin{flalign}
+                \begin{rcases}
+                    \hat{\bm{x}} \times \hat{\bm{x}} = \hat{\bm{y}} \times \hat{\bm{y}} &= \hat{\bm{z}} \times \hat{\bm{z}} = 0\quad\\
+                    \hat{\bm{x}} \times \hat{\bm{y}} = - \hat{\bm{y}} \times \hat{\bm{x}} &= \hat{\bm{z}}\quad\\
+                    \hat{\bm{y}} \times \hat{\bm{z}} = - \hat{\bm{z}} \times \hat{\bm{y}} &= \hat{\bm{x}}\quad\\
+                    \hat{\bm{z}} \times \hat{\bm{x}} = - \hat{\bm{x}} \times \hat{\bm{z}} &= \hat{\bm{y}}\quad
+                \end{rcases} &&
+            \end{flalign}
+        \end{eqnindent}
+        \begin{eqnindent}
+            \begin{flalign}
+                \Rightarrow \bm{A} \times \bm{B} &= \paren{A_x\hat{\bm{x}} + A_y\hat{\bm{y}} + A_z\hat{\bm{z}}} \times \paren{B_x\hat{\bm{x}} + B_y\hat{\bm{y}} + B_z\hat{\bm{z}}} &&\nonumber\\
+                &= \paren{A_yB_z - A_zB_y}\hat{\bm{x}} + \paren{A_zB_x - A_xB_z}\hat{\bm{y}} + \paren{A_xB_y - A_yB_x}\hat{\bm{z}} &&\nonumber\\
+                &\equiv \begin{vmatrix}
+                    \hat{\bm{x}} & \hat{\bm{y}} & \hat{\bm{z}} \\
+                    A_x & A_y & A_z \\
+                    B_x & B_y & B_z
+                \end{vmatrix} &&
+            \end{flalign}
+        \end{eqnindent}
+    \end{enumerate}
+
+\end{document}
